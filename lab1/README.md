@@ -200,7 +200,7 @@ python client.py 192.168.1.100 8000 /document.pdf ./downloads
 ### 1. Server Startup
 
 #### Local Server
-![Server Starting Locally](screenshots/01-server-start-local.png)
+![Server Starting Locally](screenshots/01-homepage.png)
 *Caption: Server successfully started on port 8000, serving the content directory*
 
 **Terminal Output:**
@@ -213,7 +213,7 @@ Press Ctrl+C to stop the server
 ```
 
 #### Docker Server
-![Docker Build and Start](screenshots/02-docker-build.png)
+![Docker Build and Start](screenshots/02-pdf-view.png)
 *Caption: Building Docker image and starting container*
 
 **Docker Output:**
@@ -231,7 +231,7 @@ lab1-http-server  | Press Ctrl+C to stop the server
 ### 2. Web Browser Tests
 
 #### Homepage (index.html)
-![Homepage Display](screenshots/03-homepage.png)
+![Homepage Display](screenshots/03-directory-listing.png)
 *Caption: Homepage with styled layout, logo image, and links to available files*
 
 **Features Shown:**
@@ -249,7 +249,7 @@ Content-Type: text/html
 ---
 
 #### PDF File Display
-![PDF File Display](screenshots/04-pdf-display.png)
+![PDF File Display](screenshots/04-404-error.png)
 *Caption: PDF document opened directly in browser*
 
 **URL:** `http://localhost:8000/document1.pdf`
@@ -266,7 +266,7 @@ Resolved path: D:\...\content\document1.pdf
 ---
 
 #### PNG Image Display
-![PNG Image Display](screenshots/05-image-display.png)
+![PNG Image Display](screenshots/05-docker-build.png)
 *Caption: PNG logo image rendered in browser*
 
 **URL:** `http://localhost:8000/logo.png`
@@ -281,7 +281,7 @@ Content-Length: 45678
 ---
 
 #### Directory Listing
-![Directory Listing](screenshots/06-directory-listing.png)
+![Directory Listing](screenshots/06-docker-running.png)
 *Caption: Auto-generated directory listing for /books/ subdirectory*
 
 **URL:** `http://localhost:8000/books/`
@@ -295,7 +295,7 @@ Content-Length: 45678
 ---
 
 #### 404 Error Page
-![404 Error](screenshots/07-404-error.png)
+![404 Error](screenshots/04-404-error.png)
 *Caption: 404 Not Found error for non-existent file*
 
 **URL:** `http://localhost:8000/nonexistent.pdf`
@@ -312,7 +312,7 @@ GET /nonexistent.pdf HTTP/1.1...
 ### 3. HTTP Client Usage
 
 #### Downloading PDF File
-![Client Downloading PDF](screenshots/08-client-download-pdf.png)
+![Client Downloading PDF](screenshots/07-client-download.png)
 *Caption: Client successfully downloading a PDF file*
 
 **Command:**
@@ -350,7 +350,7 @@ Type: PDF
 ---
 
 #### Viewing HTML Content
-![Client Viewing HTML](screenshots/09-client-html.png)
+![Client Viewing HTML](screenshots/08-network-test.png)
 *Caption: Client displaying HTML content in terminal*
 
 **Command:**
@@ -389,7 +389,7 @@ HTML CONTENT:
 ---
 
 #### Downloading from Subdirectory
-![Client Subdirectory Download](screenshots/10-client-subdirectory.png)
+![Client Subdirectory Download](screenshots/03-directory-listing.png)
 *Caption: Client downloading file from nested directory*
 
 **Command:**
@@ -402,7 +402,7 @@ python client.py localhost 8000 /books/book1.pdf ./downloads
 ### 4. Docker Container
 
 #### Docker Container Status
-![Docker Container Running](screenshots/11-docker-status.png)
+![Docker Container Running](screenshots/06-docker-running.png)
 *Caption: Docker container successfully running*
 
 **Command:**
