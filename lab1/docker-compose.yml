@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./content:/app/content
+      - ./downloads:/app/downloads
+    container_name: mini_server
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    depends_on:
+      - server
+    volumes:
+      - ./downloads:/app/downloads
+    container_name: mini_client
