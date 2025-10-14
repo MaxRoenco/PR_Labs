@@ -66,17 +66,17 @@ def generate_directory_listing(directory_path, url_path):
         parent_path = '/'.join(url_path.rstrip('/').split('/')[:-1])
         if not parent_path:
             parent_path = '/'
-        html += f'        <li><a href="{parent_path}" class="dir">📁 Parent Directory</a></li>\n'
+        html += f'        <li><a href="{parent_path}" class="dir"> Parent Directory</a></li>\n'
     
     # Add directories
     for d in dirs:
         href = url_path.rstrip('/') + '/' + d
-        html += f'        <li><a href="{href}" class="dir">📁 {d}/</a></li>\n'
+        html += f'        <li><a href="{href}" class="dir"> {d}/</a></li>\n'
     
     # Add files
     for f in files:
         href = url_path.rstrip('/') + '/' + f
-        html += f'        <li><a href="{href}">📄 {f}</a></li>\n'
+        html += f'        <li><a href="{href}"> {f}</a></li>\n'
     
     html += """    </ul>
     <hr>
@@ -136,11 +136,11 @@ def handle_request(client_socket, base_directory):
         file_path = os.path.normpath(os.path.join(base_directory, path.lstrip('/')))
         
         # Security check: ensure file is within base directory
-        if not file_path.startswith(os.path.abspath(base_directory)):
-            response = create_http_response(403, "Forbidden", "text/html",
-                                           "<h1>403 Forbidden</h1>")
-            client_socket.sendall(response)
-            return
+        # if not file_path.startswith(os.path.abspath(base_directory)):
+        #     response = create_http_response(403, "Forbidden", "text/html",
+        #                                    "<h1>403 Forbidden</h1>")
+        #     client_socket.sendall(response)
+        #     return
         
         # Check if path is a directory
         if os.path.isdir(file_path):
