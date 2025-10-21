@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PDF Library</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            margin-top: 10px;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .book-list {
+            list-style: none;
+            padding: 0;
+        }
+        .book-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .book-list li:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+        .book-list a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        .book-list a:hover {
+            color: #667eea;
+        }
+        .folder-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .folder-link:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 Welcome to My PDF Library</h1>
+        <p class="subtitle">Browse and download my collection of documents</p>
+    </header>
+
+    <div class="content">
+        <h2>Featured Documents</h2>
+        <ul class="book-list">
+            <li>📄 <a href="document1.pdf">Introduction to Computer Networks</a></li>
+            <li>📄 <a href="document2.pdf">Python Programming Guide</a></li>
+            <li>📄 <a href="document3.pdf">Web Development Basics</a></li>
+        </ul>
+
+        <h2>Browse by Category</h2>
+        <a href="/books/" class="folder-link">📁 View All Books →</a>
+    </div>
+</body>
+</html>
