@@ -197,14 +197,11 @@ def handle_request(client_socket, base_directory):
 
 def start_server(host, port, directory):
     """Start the HTTP server"""
-    # Create socket
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     
-    # Bind to address
     server_socket.bind((host, port))
-    
-    # Listen for connections
+
     server_socket.listen(5)
     
     print(f"Server started on {host}:{port}")
@@ -213,14 +210,11 @@ def start_server(host, port, directory):
     
     try:
         while True:
-            # Accept client connection
             client_socket, client_address = server_socket.accept()
             print(f"\nConnection from {client_address}")
-            
-            # Handle request
+
             handle_request(client_socket, directory)
-            
-            # Close connection
+
             client_socket.close()
     
     except KeyboardInterrupt:
@@ -239,7 +233,7 @@ if __name__ == "__main__":
         print(f"Error: {directory} is not a valid directory")
         sys.exit(1)
     
-    HOST = '0.0.0.0'  # Listen on all interfaces
+    HOST = '0.0.0.0'  
     PORT = 8080
     
     start_server(HOST, PORT, directory)
